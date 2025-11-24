@@ -9,11 +9,18 @@
 }
 
 /* Styles de base */
+html { height: 100%; }
 body {
+  margin: 0;
   font-family: 'Roboto', sans-serif;
   color: var(--dark-gray);
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+.site-main { flex: 1; }
 
 /* Utilitaires */
 .sr-only {
@@ -150,6 +157,69 @@ nav ul li a:hover {
   opacity: 1;
 }
 
+/* Experience Section */
+.experience-section {
+  padding: 4rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.experience-section h2 {
+  font-size: 3.2rem;
+  margin-bottom: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-gray);
+}
+
+.experience-list {
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.experience-card {
+  background-color: var(--light-gray);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  width: 40rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.06);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.exp-logo {
+  width: 7.2rem; /* ~72px */
+  height: 7.2rem;
+  object-fit: contain;
+  border-radius: 0.6rem;
+  background: white;
+  padding: 0.4rem;
+  flex-shrink: 0;
+}
+
+.exp-content { flex: 1; }
+
+.exp-role {
+  font-size: 1.8rem;
+  color: var(--orange-primary);
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.exp-company {
+  font-size: 1.4rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+
+.exp-company a { color: var(--dark-gray); text-decoration: underline; }
+.exp-desc { font-size: 1.6rem; line-height:1.6; color: #333; }
+
 .progress-bar {
   width: 70%;
   height: 0.4rem;
@@ -245,7 +315,20 @@ nav ul li a:hover {
 footer {
   background-color: var(--dark-gray);
   color: white;
-  padding: 3rem 4rem;
+  padding: 3rem 0; /* horizontal padding handled by .footer-inner */
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto; /* push to bottom when page is short */
+}
+
+/* Make footer span the full viewport width (flush to the edges) while keeping its content centered */
+/* Footer inner container: keep background full width but center content */
+.footer-inner {
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4rem;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -330,6 +413,22 @@ footer {
   .projects-list {
     grid-template-columns: 1fr;
   }
+
+  .experience-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-card {
+    width: 100%;
+    max-width: 60rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-card .exp-content { text-align: center; }
+  .exp-logo { margin-bottom: 1rem; }
   
   footer {
     flex-direction: column;
@@ -355,5 +454,47 @@ footer {
   .language-icon {
     width: 9rem;
     height: 9rem;
+  }
+}
+
+/* BTS compétences (tableau) - basic styles */
+.bts-section {
+  padding: 4rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+.bts-section h2 { font-size: 3.2rem; margin-bottom: 2rem; font-family: 'Montserrat', sans-serif; color: var(--dark-gray); }
+.bts-table-wrap { width: 100%; overflow-x: auto; display: flex; justify-content: center; }
+.bts-table { width: 100%; max-width: 110rem; border-collapse: collapse; margin: 0 0 1.6rem; }
+.bts-table th, .bts-table td { padding: 1rem; border: 1px solid #e6e6e6; font-size: 1.4rem; text-align: left; }
+.bts-table thead th { background: var(--light-gray); color: var(--dark-gray); font-weight: 700; }
+.bts-note { font-size: 1.4rem; color: #666; }
+
+@media (max-width: 76.8rem) {
+  .bts-table { width: 100%; }
+  .bts-table th, .bts-table td { font-size: 1.2rem; padding: 0.6rem; }
+}
+
+/* Agrandir les colonnes Unnamed:2 -> Unnamed:7 (colonnes 3 à 8) pour meilleure lisibilité */
+.bts-table th:nth-child(3), .bts-table td:nth-child(3),
+.bts-table th:nth-child(4), .bts-table td:nth-child(4),
+.bts-table th:nth-child(5), .bts-table td:nth-child(5),
+.bts-table th:nth-child(6), .bts-table td:nth-child(6),
+.bts-table th:nth-child(7), .bts-table td:nth-child(7),
+.bts-table th:nth-child(8), .bts-table td:nth-child(8) {
+  min-width: 20rem; /* ~320px */
+  white-space: normal;
+  word-break: break-word;
+}
+
+@media (max-width: 76.8rem) {
+  /* On small screens allow natural flow */
+  .bts-table th:nth-child(3), .bts-table td:nth-child(3),
+  .bts-table th:nth-child(4), .bts-table td:nth-child(4),
+  .bts-table th:nth-child(5), .bts-table td:nth-child(5),
+  .bts-table th:nth-child(6), .bts-table td:nth-child(6),
+  .bts-table th:nth-child(7), .bts-table td:nth-child(7),
+  .bts-table th:nth-child(8), .bts-table td:nth-child(8) {
+    min-width: auto;
   }
 }

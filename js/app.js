@@ -44,4 +44,21 @@ document.addEventListener('DOMContentLoaded', function () {
   if (projectCards.length > 0) {
     projectCards[0].click();
   }
+
+  // Charger le tableau BTS depuis bts-table.html pour garder index.html léger
+  const btsContainer = document.getElementById('bts-container');
+  if (btsContainer) {
+    fetch('bts-table.html')
+      .then(resp => {
+        if (!resp.ok) throw new Error('Network response was not ok');
+        return resp.text();
+      })
+      .then(html => {
+        btsContainer.innerHTML = html;
+      })
+      .catch(err => {
+        console.warn('Erreur chargement bts-table.html:', err);
+        btsContainer.innerHTML = '<p class="bts-error">Le tableau n\'a pas pu être chargé automatiquement. Si vous développez en local, servez le projet via un serveur (Live Server ou python -m http.server).</p>';
+      });
+  }
 });

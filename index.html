@@ -23,11 +23,35 @@
     </nav>
   </header>
 
+  <main class="site-main">
+
   <div class="hero" id="about">
     <h2 class="sr-only">À propos</h2>
     <p class="hero-content">Bienvenue sur mon portfolio de développeur fullstack. Je suis Sofiane Zaidi, passionné par la création d'applications web modernes et performantes. Je combine expertise technique et créativité pour transformer vos idées en solutions digitales innovantes.</p>
   </div>
- 
+
+  <section class="experience-section" id="experience">
+    <h2>Expériences professionnelles</h2>
+    <div class="experience-list">
+      <article class="experience-card">
+        <img class="exp-logo" src="asset/kodamer.png" alt="Kodamer logo" width="72" height="72">
+        <div class="exp-content">
+          <h3 class="exp-role">Stagiaire — Web Developer</h3>
+          <p class="exp-company"><a href="https://kodamer.fr" target="_blank" rel="noopener noreferrer">Kodamer</a></p>
+          <p class="exp-desc">Participation à la refonte et aux modifications du site e-commerce <strong>kodamer.fr</strong> : intégration HTML/CSS, corrections JavaScript et optimisation des pages produits.</p>
+        </div>
+      </article>
+      <article class="experience-card">
+        <img class="exp-logo" src="asset/département.jpg" alt="Département 93 logo" width="72" height="72">
+        <div class="exp-content">
+          <h3 class="exp-role">Apprentie — Technicien Helpdesk</h3>
+          <p class="exp-company">Département du 93</p>
+          <p class="exp-desc">Support technique, prise en charge des incidents utilisateurs, gestion des tickets et maintenance des postes.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <div class="language-section" id="skills">
     <h2>Langages</h2>
     <ul class="language-icons">
@@ -83,22 +107,36 @@
     </div>
   </div>
 
+  <!-- BTS Compétences (tableau) - inline restored -->
+  <section class="bts-section" id="bts-competences">
+    <!-- BTS Compétences (tableau) loaded from external file -->
+    <section class="bts-section" id="bts-competences">
+      <h2>Compétences (BTS)</h2>
+      <div class="bts-table-wrap" id="bts-container">
+        <p class="bts-loading">Chargement du tableau…</p>
+      </div>
+      <p class="bts-note"></p>
+    </section>
+  </main>
+
   <footer id="contact">
-    <address class="contact-info">
-      <p>Contact :</p>
-      <p>Email : contact@sofianezaidi.com</p>
-    </address>
-    <ul class="social-links">
-      <li class="social-icon">
-        <i class="fab fa-linkedin-in fa-lg"></i>
-      </li>
-      <li class="social-icon">
-        <i class="fab fa-github fa-lg"></i>
-      </li>
-      <li class="social-icon">
-        <i class="fab fa-x-twitter fa-lg"></i>
-      </li>
-    </ul>
+    <div class="footer-inner">
+      <address class="contact-info">
+        <p>Contact :</p>
+        <p>Email : contact@sofianezaidi.com</p>
+      </address>
+      <ul class="social-links">
+        <li class="social-icon">
+          <i class="fab fa-linkedin-in fa-lg"></i>
+        </li>
+        <li class="social-icon">
+          <i class="fab fa-github fa-lg"></i>
+        </li>
+        <li class="social-icon">
+          <i class="fab fa-x-twitter fa-lg"></i>
+        </li>
+      </ul>
+    </div>
   </footer>
 
   <script src="js/app.js"></script>
