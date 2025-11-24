@@ -4,8 +4,7 @@ Un portfolio web moderne présentant mes projets, compétences et expériences p
 
 ## 🔗 Site en ligne
 
-Découvrez mon portfolio ici : [https://nova-iv.github.io/New-Site/](https://nova-iv.github.io/New-Site/)
-
+Découvrez mon portfolio ici : https://nova-iv.github.io/Portfolio/
 ## 🛠️ Technologies utilisées
 
 - HTML5
