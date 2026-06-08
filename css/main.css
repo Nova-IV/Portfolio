@@ -467,6 +467,111 @@ nav ul li a:hover {
   transform: translateY(-0.2rem);
 }
 
+/* Skills E5 Section */
+.skills-e5-section {
+  padding: 6rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.skills-e5-section h2 {
+  font-size: 3.6rem;
+  margin-bottom: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-gray);
+  font-weight: 700;
+}
+
+.table-responsive {
+  max-width: 120rem;
+  margin: 0 auto;
+  overflow-x: auto;
+  box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+  border-radius: 1.2rem;
+  background-color: white;
+}
+
+.e5-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+.e5-table th, .e5-table td {
+  padding: 1.5rem;
+  border: 1px solid var(--light-gray);
+  vertical-align: top;
+}
+
+.e5-table th {
+  background-color: var(--dark-gray);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.e5-table ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.e5-table ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+.e5-table ul li::before {
+  content: '\25B8'; /* Unicode for right-pointing small triangle */
+  position: absolute;
+  left: 0;
+  color: var(--orange-primary);
+  font-weight: bold;
+}
+
+.e5-table .section-title td {
+  background-color: var(--light-gray);
+  font-weight: bold;
+  color: var(--dark-gray);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.download-wrapper {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--orange-primary);
+  color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0.5rem 1.5rem rgba(232, 102, 0, 0.3);
+}
+
+.download-btn:hover {
+  background-color: var(--orange-secondary);
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.8rem 2rem rgba(232, 102, 0, 0.4);
+}
+
 /* Footer */
 footer {
   background-color: var(--dark-gray);
