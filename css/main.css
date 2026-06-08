@@ -242,21 +242,23 @@ nav ul li a:hover {
 
 /* Project Section */
 .project-section {
-  padding: 4rem 0;
+  padding: 6rem 0;
   background-color: var(--light-gray);
   min-height: 100vh;
 }
 
 .project-section h2 {
   text-align: center;
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   margin-bottom: 4rem;
   font-family: 'Montserrat', sans-serif;
   color: var(--dark-gray);
+  font-weight: 700;
 }
 
 .projects-container {
   display: flex;
+  flex-direction: column;
   gap: 4rem;
   padding: 0 4rem;
   max-width: 120rem;
@@ -264,51 +266,205 @@ nav ul li a:hover {
 }
 
 .projects-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .project-card {
-  height: 25rem;
+  height: 26rem;
   background-color: white;
-  border-radius: 0.8rem;
+  border-radius: 1.2rem;
   overflow: hidden;
-  transition: transform 0.3s;
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  position: relative;
   cursor: pointer;
+  box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .project-card:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-0.8rem);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.15);
+}
+
+.project-card.active {
+  box-shadow: 0 0 0 0.4rem var(--orange-primary), 0 1.5rem 3.5rem rgba(232, 102, 0, 0.15);
 }
 
 .project-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover img,
+.project-card.active img {
+  transform: scale(1.06);
+}
+
+.project-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  transition: background 0.3s;
+}
+
+.project-card:hover .project-card-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.project-card-overlay h3 {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.05rem;
+  text-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.5);
 }
 
 .project-details {
-  flex: 1;
   background-color: white;
-  border-radius: 0.8rem;
-  padding: 3rem;
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
-  transition: opacity 0.3s;
+  border-radius: 1.6rem;
+  padding: 4.5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.06);
+  min-height: 42rem;
+}
+
+.project-details-content {
+  display: flex;
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+.project-details-text {
+  flex: 1.4;
+}
+
+.project-details-media {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-img-wrap {
+  width: 100%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 3.5rem rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #f9f9f9;
+}
+
+.project-detail-img {
+  width: 100%;
+  height: auto;
+  max-height: 32rem;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.detail-img-wrap:hover .project-detail-img {
+  transform: scale(1.03);
 }
 
 .project-title {
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--dark-gray);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.project-subtitle {
+  font-size: 1.8rem;
+  font-weight: 500;
   color: var(--orange-primary);
+  margin: 0 0 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.tech-tag {
+  background-color: rgba(232, 102, 0, 0.06);
+  color: var(--orange-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(232, 102, 0, 0.15);
   font-family: 'Montserrat', sans-serif;
 }
 
 .project-description {
   font-size: 1.6rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+
+.project-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.project-achievements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.project-achievements li i {
+  color: var(--orange-primary);
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+  font-size: 1.6rem;
+}
+
+.repo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--dark-gray);
+  color: white;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.repo-btn:hover {
+  background-color: var(--orange-primary);
+  transform: translateY(-0.2rem);
 }
 
 /* Footer */
@@ -367,17 +523,22 @@ footer {
 
 /* Media Queries pour Responsive Design */
 @media (max-width: 99.2rem) {
-  .projects-container {
-    flex-direction: column;
-  }
-  
   .projects-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
   
   .project-card {
     height: 20rem;
+  }
+
+  .project-details {
+    padding: 3rem;
+  }
+
+  .project-details-content {
+    flex-direction: column;
+    gap: 3rem;
   }
 }
 
@@ -456,45 +617,4 @@ footer {
     height: 9rem;
   }
 }
-
-/* BTS compétences (tableau) - basic styles */
-.bts-section {
-  padding: 4rem 2rem;
-  background-color: white;
-  text-align: center;
-}
-.bts-section h2 { font-size: 3.2rem; margin-bottom: 2rem; font-family: 'Montserrat', sans-serif; color: var(--dark-gray); }
-.bts-table-wrap { width: 100%; overflow-x: auto; display: flex; justify-content: center; }
-.bts-table { width: 100%; max-width: 110rem; border-collapse: collapse; margin: 0 0 1.6rem; }
-.bts-table th, .bts-table td { padding: 1rem; border: 1px solid #e6e6e6; font-size: 1.4rem; text-align: left; }
-.bts-table thead th { background: var(--light-gray); color: var(--dark-gray); font-weight: 700; }
-.bts-note { font-size: 1.4rem; color: #666; }
-
-@media (max-width: 76.8rem) {
-  .bts-table { width: 100%; }
-  .bts-table th, .bts-table td { font-size: 1.2rem; padding: 0.6rem; }
-}
-
-/* Agrandir les colonnes Unnamed:2 -> Unnamed:7 (colonnes 3 à 8) pour meilleure lisibilité */
-.bts-table th:nth-child(3), .bts-table td:nth-child(3),
-.bts-table th:nth-child(4), .bts-table td:nth-child(4),
-.bts-table th:nth-child(5), .bts-table td:nth-child(5),
-.bts-table th:nth-child(6), .bts-table td:nth-child(6),
-.bts-table th:nth-child(7), .bts-table td:nth-child(7),
-.bts-table th:nth-child(8), .bts-table td:nth-child(8) {
-  min-width: 20rem; /* ~320px */
-  white-space: normal;
-  word-break: break-word;
-}
-
-@media (max-width: 76.8rem) {
-  /* On small screens allow natural flow */
-  .bts-table th:nth-child(3), .bts-table td:nth-child(3),
-  .bts-table th:nth-child(4), .bts-table td:nth-child(4),
-  .bts-table th:nth-child(5), .bts-table td:nth-child(5),
-  .bts-table th:nth-child(6), .bts-table td:nth-child(6),
-  .bts-table th:nth-child(7), .bts-table td:nth-child(7),
-  .bts-table th:nth-child(8), .bts-table td:nth-child(8) {
-    min-width: auto;
-  }
-}
+

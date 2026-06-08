@@ -88,35 +88,48 @@
     <div class="projects-container">
       <ul class="projects-list">
         <li class="project-card" data-project="1">
-          <img src="asset/projet1.jpg" alt="Projet 1"> 
+          <img src="asset/projet1.jpg" alt="Website de suivie sportif">
+          <div class="project-card-overlay">
+            <h3>Website de suivie sportif</h3>
+          </div>
         </li>
         <li class="project-card" data-project="2">
-          <img src="asset/projet2.jpg" alt="Projet 2">
+          <img src="asset/projet2.jpg" alt="ERP Médical">
+          <div class="project-card-overlay">
+            <h3>ERP Médical</h3>
+          </div>
         </li>
         <li class="project-card" data-project="3">
-          <img src="asset/projet3.jpg" alt="Projet 3">
-        </li>
-        <li class="project-card" data-project="4">
-          <img src="asset/projet4.jpg" alt="Projet 4">
+          <img src="asset/projet3.jpg" alt="Kodamer.fr">
+          <div class="project-card-overlay">
+            <h3>Kodamer.fr</h3>
+          </div>
         </li>
       </ul>
-      <aside class="project-details">
-        <h3 class="project-title">Sélectionnez un projet</h3>
-        <p class="project-description">Cliquez sur l'un des projets à gauche pour afficher sa description détaillée.</p>
+      <aside class="project-details" id="project-details-box">
+        <div class="project-details-content">
+          <div class="project-details-text">
+            <h3 class="project-title" id="detail-title">Sélectionnez un projet</h3>
+            <h4 class="project-subtitle" id="detail-subtitle"></h4>
+            <div class="project-tech-tags" id="detail-tags"></div>
+            <p class="project-description" id="detail-desc">Cliquez sur l'un des projets ci-dessus pour afficher sa description détaillée.</p>
+            <ul class="project-achievements" id="detail-achievements"></ul>
+            <div id="detail-repo-container" style="display: none; margin-top: 2.5rem;">
+              <a id="detail-repo-link" href="#" target="_blank" class="repo-btn">
+                <i class="fab fa-gitlab"></i> Voir le dépôt
+              </a>
+            </div>
+          </div>
+          <div class="project-details-media">
+            <div class="detail-img-wrap">
+              <img id="detail-image" src="" alt="Aperçu du projet" class="project-detail-img">
+            </div>
+          </div>
+        </div>
       </aside>
     </div>
   </div>
 
-  <!-- BTS Compétences (tableau) - inline restored -->
-  <section class="bts-section" id="bts-competences">
-    <!-- BTS Compétences (tableau) loaded from external file -->
-    <section class="bts-section" id="bts-competences">
-      <h2>Compétences (BTS)</h2>
-      <div class="bts-table-wrap" id="bts-container">
-        <p class="bts-loading">Chargement du tableau…</p>
-      </div>
-      <p class="bts-note"></p>
-    </section>
   </main>
 
   <footer id="contact">

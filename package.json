@@ -4,7 +4,8 @@
   "description": "Lien pour la page : https://nova-iv.github.io/New-Site/",
   "main": "index.js",
   "scripts": {
-    "build": "babel --no-babelrc src -w -d js --preset=env"
+    "build": "babel --no-babelrc src -w -d js --preset=env",
+    "start": "npx -y http-server -p 8000"
   },
   "author": "",
   "license": "ISC",
