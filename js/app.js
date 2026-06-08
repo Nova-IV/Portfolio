@@ -18,17 +18,18 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       id: 2,
-      title: "ERP Médical",
-      subtitle: "Système de Progiciel de Gestion Intégré pour Cliniques",
-      description: "Développement d'un progiciel de gestion intégré (ERP) complet pour le secteur de la santé, conçu pour centraliser et optimiser la gestion quotidienne des établissements médicaux.",
+      title: "LabConnect",
+      subtitle: "Système ERP pour Laboratoires Médicaux",
+      description: "LabConnect est un système ERP (Enterprise Resource Planning) développé en Java pour répondre aux besoins de gestion interne des laboratoires médicaux, des patients, et des prélèvements d'analyses. Ce projet illustre la conception, le développement, et le déploiement d'une solution d'entreprise interconnectée et sécurisée.",
       achievements: [
-        "Gestion sécurisée des dossiers patients (historique médical, allergies, constantes).",
-        "Module de prise de rendez-vous avec calendrier interactif et rappels automatisés.",
-        "Module de facturation et télétransmission sécurisée des prescriptions.",
-        "Base de données relationnelle optimisée pour garantir l'intégrité et la confidentialité des données de santé (normes RGPD/HDS)."
+        "Authentification sécurisée avec gestion des rôles d'accès.",
+        "Tableau de bord global pour l'activité (patients, laboratoires, prélèvements).",
+        "Gestion complète des laboratoires, des types de tests et du suivi des prélèvements.",
+        "Interface utilisateur Web-Like moderne (Glassmorphism & Dark Mode) avec JavaFX."
       ],
-      technologies: ["Java", "PHP", "MySQL", "JavaScript", "HTML5/CSS3", "Bootstrap"],
-      image: "asset/projet2.jpg"
+      technologies: ["Java", "JavaFX", "MariaDB", "Hibernate", "Gradle"],
+      image: "asset/labconnect_dashboard.png",
+      repoLink: "https://gitlab.com/Nova-IV/erp-bts"
     },
     {
       id: 3,
