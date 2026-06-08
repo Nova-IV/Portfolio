@@ -482,72 +482,28 @@ nav ul li a:hover {
   font-weight: 700;
 }
 
-.table-responsive {
-  max-width: 120rem;
+.e5-pdf-container {
+  max-width: 110rem;
   margin: 0 auto;
-  overflow-x: auto;
-  box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
   border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   background-color: white;
 }
 
-.e5-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 1.3rem;
-}
-
-.e5-table th, .e5-table td {
-  padding: 1.5rem;
-  border: 1px solid var(--light-gray);
-  vertical-align: top;
-}
-
-.e5-table th {
-  background-color: var(--dark-gray);
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.e5-table ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.e5-table ul li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.8rem;
-  line-height: 1.4;
-}
-
-.e5-table ul li::before {
-  content: '\25B8'; /* Unicode for right-pointing small triangle */
-  position: absolute;
-  left: 0;
-  color: var(--orange-primary);
-  font-weight: bold;
-}
-
-.e5-table .section-title td {
-  background-color: var(--light-gray);
-  font-weight: bold;
-  color: var(--dark-gray);
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  font-size: 1.6rem;
+.e5-pdf-container embed {
+  display: block;
+  border: none;
 }
 
 .download-wrapper {
   margin-top: 4rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .download-btn {
@@ -570,6 +526,16 @@ nav ul li a:hover {
   background-color: var(--orange-secondary);
   transform: translateY(-0.3rem);
   box-shadow: 0 0.8rem 2rem rgba(232, 102, 0, 0.4);
+}
+
+.excel-btn {
+  background-color: #217346;
+  box-shadow: 0 0.5rem 1.5rem rgba(33, 115, 70, 0.3);
+}
+
+.excel-btn:hover {
+  background-color: #1e613b;
+  box-shadow: 0 0.8rem 2rem rgba(33, 115, 70, 0.4);
 }
 
 /* Footer */
